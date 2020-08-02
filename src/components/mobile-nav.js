@@ -24,7 +24,7 @@ const Menu = styled.div`
   height: 100%;
   padding-top: 50px;
   background-color: #83b541;
-  z-index: 2;
+  z-index: 9;
   overflow-x: hidden;
   width: ${({ shouldShow }) => (shouldShow ? "300px" : "0px")};
   transition-property: all;
@@ -61,7 +61,7 @@ const Overlay = styled.div`
   height: 100%;
   background-color: black;
   opacity: 0.5;
-  z-index: 1;
+  z-index: 8;
   visibility: ${({ shouldShow }) => (shouldShow ? "visible" : "hidden")};
 `
 

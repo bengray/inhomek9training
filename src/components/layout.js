@@ -9,7 +9,7 @@ import "../shared/reset.css"
 
 const Wrapper = styled.div`
   color: #212121;
-  font-family: "montserratlight", Helvetica, Arial, sans-serif;
+  font-family: "montserrat", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.8;
   > a {
