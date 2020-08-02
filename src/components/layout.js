@@ -18,9 +18,9 @@ const Wrapper = styled.div`
 `
 
 const SiteHeader = styled.header`
-  margin: 0.5rem 0 1.5rem;
+  margin: 0.5rem 0 0;
   width: 100%;
-  min-height: 50px;
+  height: 90px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,22 +44,29 @@ const HiddenH1 = styled.h1`
 `
 
 const LogoImage = styled.img`
-  max-height: 90px;
+  height: 90px;
 `
 
-export default function Layout({ children }) {
+const HeaderWrapper = styled.div`
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+`
+
+export default function Layout({ children, pathName }) {
   return (
     <Wrapper>
       <TopBar />
-      <Container>
-        <SiteHeader>
-          <Logo to="/">
-            <HiddenH1>Dorner Canine Training</HiddenH1>
-            <LogoImage src={dorner_logo} />
-          </Logo>
-          <Navigation />
-        </SiteHeader>
-      </Container>
+      <HeaderWrapper>
+        <Container>
+          <SiteHeader>
+            <Logo to="/">
+              <HiddenH1>Dorner Canine Training</HiddenH1>
+              <LogoImage src={dorner_logo} />
+            </Logo>
+            <Navigation pathName={pathName} />
+          </SiteHeader>
+        </Container>
+      </HeaderWrapper>
       {children}
       <Container>
         <Footer>Copyright 2020</Footer>

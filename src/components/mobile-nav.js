@@ -18,16 +18,18 @@ const BarsBox = styled.div`
 
 const Menu = styled.div`
   background-color: #ccc;
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
-  width: 300px;
   height: 100%;
   padding-top: 50px;
   background-color: #83b541;
   z-index: 2;
-  visibility: ${({ shouldShow }) => (shouldShow ? "visible" : "hidden")};
-  transform: translate3d(0, 0, 0);
+  overflow-x: hidden;
+  width: ${({ shouldShow }) => (shouldShow ? "300px" : "0px")};
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 `
 
 const NavList = styled.ul`
@@ -85,7 +87,6 @@ export default function MobileNav() {
       </Link>
     </NavItem>
   )
-
   const handleOpen = () => {
     setShowMobileNav(true)
   }

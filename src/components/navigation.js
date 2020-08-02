@@ -17,6 +17,9 @@ const NavItem = styled.li`
     color: #212121;
     transition: color 0.4s;
     text-decoration: none;
+    border-bottom: ${({ currentPage }) =>
+      currentPage ? "3px solid #83b541" : "none"};
+    padding-bottom: 8px;
     &:hover {
       border-bottom: 3px solid #83b541;
       color: #83b541;
@@ -25,21 +28,29 @@ const NavItem = styled.li`
 `
 
 const ListLink = props => (
-  <NavItem>
+  <NavItem currentPage={props.isCurrent}>
     <Link to={props.to}>{props.children}</Link>
   </NavItem>
 )
 
-export default function Navigation() {
+export default function Navigation({ pathName }) {
   if (isMobile) {
     return <MobileNav />
   }
   return (
     <NavList>
-      <ListLink to="/">Home</ListLink>
-      <ListLink to="/testimonials/">Testimonials</ListLink>
-      <ListLink to="/about/">About</ListLink>
-      <ListLink to="/contact/">Contact</ListLink>
+      <ListLink isCurrent={pathName === "/"} to="/">
+        Home
+      </ListLink>
+      <ListLink isCurrent={pathName === "/testimonials/"} to="/testimonials/">
+        Testimonials
+      </ListLink>
+      <ListLink isCurrent={pathName === "/about/"} to="/about/">
+        About
+      </ListLink>
+      <ListLink isCurrent={pathName === "/contact/"} to="/contact/">
+        Contact
+      </ListLink>
     </NavList>
   )
 }

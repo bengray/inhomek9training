@@ -42,7 +42,11 @@ export default function TopBar() {
           <FontAwesomeIcon icon={faPhone} />
           &nbsp; <a href="tel:8439007475">(843) 900-7475</a>{" "}
           &nbsp;&nbsp;&nbsp;&nbsp;{" "}
-          <FacebookLink to="https://www.facebook.com/Dorner-Canine-Training-120605697974984/">
+          <FacebookLink
+            target="_blank"
+            rel="noreferrer"
+            to="https://www.facebook.com/Dorner-Canine-Training-120605697974984/"
+          >
             <FontAwesomeIcon icon={faFacebook} />
           </FacebookLink>
         </ContactInfo>
