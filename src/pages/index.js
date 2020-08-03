@@ -1,4 +1,5 @@
 import React from "react"
+import SEO from "../components/seo"
 import Layout from "../components/layout"
 import { Container } from "../shared/styles"
 import styled from "styled-components"
@@ -233,83 +234,95 @@ const RequestButton = styled.div`
 
 export default function Home({ location }) {
   return (
-    <Layout pathName={location.pathname}>
-      <Container>
-        <LargeLogo src={dorner_logo_large} />
-        <TagLine>
-          In-Home Obedience Training & <br />
-          Customized Training Services
-        </TagLine>
-      </Container>
-      <HomeBanner image={homeBanner} />
-      <Container>
-        <Head2>Welcome to</Head2>
-        <Head1>Dorner Canine Training</Head1>
-        <Lead>In-Home Obedience Training & Customized Training Services</Lead>
-        <Paragraph>
-          Our commitment is to help all of out clients establish a loving and
-          healthy relationship with their dogs.
-        </Paragraph>
-        <Paragraph>
-          We do that by providing expert, customized training services for your
-          dog, in your home.
-        </Paragraph>
-        <Paragraph>
-          We do that by teaching our clients and their families to establish
-          easy-to-learn, consistent training techniques that become a way of
-          life for you and your dog.
-        </Paragraph>
-      </Container>
-      <GreenDoggo>
+    <>
+      <SEO
+        page="Home"
+        description="Dorner Canine Training.  Personal, Professional, Proven."
+      />
+      <Layout pathName={location.pathname}>
         <Container>
-          <SignUpText>
-            Sign up for 3 lessons in the evaluation and receive 10% of the total
-            cost of the lessons
-          </SignUpText>
+          <LargeLogo
+            src={dorner_logo_large}
+            alt="Image of a dog holding a lead in its mouth"
+          />
+          <TagLine>
+            In-Home Obedience Training & <br />
+            Customized Training Services
+          </TagLine>
         </Container>
-      </GreenDoggo>
-      <Container>
-        <ServicesBlock>
-          <ServiceDoggo src={services_dog} />
-          <Service>
-            <Head3>Basic Services:</Head3>
-            <Paragraph>
-              <ServicesList>
-                <li>Behavioral Counseling</li>
-                <li>Puppy Training</li>
-                <li>Basic Obedience</li>
-                <li>Advanced Obedience</li>
-                <li>Off-Lead Work</li>
-              </ServicesList>
-            </Paragraph>
-          </Service>
-          <Service>
-            <Head3>Special Services:</Head3>
-            <Paragraph>
-              <ServicesList>
-                <li>Assistance Dog Training</li>
-                <li>Therapy Dog Training</li>
-                <li>Emotional Support Dog Training</li>
-                <li>Temperament Testing</li>
-                <li>Puppy Selection</li>
-                <li>Client Boarding</li>
-              </ServicesList>
-            </Paragraph>
-          </Service>
-        </ServicesBlock>
-      </Container>
-      <RequestEvaluationWrapper>
+        <HomeBanner
+          src={homeBanner}
+          alt="Image of dog running in the mountains"
+        />
         <Container>
-          <RequestEvaluation>
-            <Text>
-              REQUEST AN EVALUATION <span>With Dorner Canine Training</span>
-            </Text>
-            <RequestButton>
-              <Link to="/contact/">Let's Get Started</Link>
-            </RequestButton>
-          </RequestEvaluation>
+          <Head2>Welcome to</Head2>
+          <Head1>Dorner Canine Training</Head1>
+          <Lead>In-Home Obedience Training & Customized Training Services</Lead>
+          <Paragraph>
+            Our commitment is to help all of out clients establish a loving and
+            healthy relationship with their dogs.
+          </Paragraph>
+          <Paragraph>
+            We do that by providing expert, customized training services for
+            your dog, in your home.
+          </Paragraph>
+          <Paragraph>
+            We do that by teaching our clients and their families to establish
+            easy-to-learn, consistent training techniques that become a way of
+            life for you and your dog.
+          </Paragraph>
         </Container>
-      </RequestEvaluationWrapper>
-    </Layout>
+        <GreenDoggo>
+          <Container>
+            <SignUpText>
+              Sign up for 3 lessons in the evaluation and receive 10% of the
+              total cost of the lessons
+            </SignUpText>
+          </Container>
+        </GreenDoggo>
+        <Container>
+          <ServicesBlock>
+            <ServiceDoggo src={services_dog} alt="Image of fluffy dog" />
+            <Service>
+              <Head3>Basic Services:</Head3>
+              <Paragraph>
+                <ServicesList>
+                  <li>Behavioral Counseling</li>
+                  <li>Puppy Training</li>
+                  <li>Basic Obedience</li>
+                  <li>Advanced Obedience</li>
+                  <li>Off-Lead Work</li>
+                </ServicesList>
+              </Paragraph>
+            </Service>
+            <Service>
+              <Head3>Special Services:</Head3>
+              <Paragraph>
+                <ServicesList>
+                  <li>Assistance Dog Training</li>
+                  <li>Therapy Dog Training</li>
+                  <li>Emotional Support Dog Training</li>
+                  <li>Temperament Testing</li>
+                  <li>Puppy Selection</li>
+                  <li>Client Boarding</li>
+                </ServicesList>
+              </Paragraph>
+            </Service>
+          </ServicesBlock>
+        </Container>
+        <RequestEvaluationWrapper>
+          <Container>
+            <RequestEvaluation>
+              <Text>
+                REQUEST AN EVALUATION <span>With Dorner Canine Training</span>
+              </Text>
+              <RequestButton>
+                <Link to="/contact/">Let's Get Started</Link>
+              </RequestButton>
+            </RequestEvaluation>
+          </Container>
+        </RequestEvaluationWrapper>
+      </Layout>
+    </>
   )
 }

@@ -24,5 +24,13 @@ module.exports = {
         display: "swap",
       },
     },
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        host: `http://inhomek9training.com`,
+        sitemap: `http://inhomek9training.com/sitemap.xml`,
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
   ],
 }

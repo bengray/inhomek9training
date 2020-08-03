@@ -75,7 +75,10 @@ export default function Layout({ children, pathName }) {
           <SiteHeader>
             <Logo to="/">
               <HiddenH1>Dorner Canine Training</HiddenH1>
-              <LogoImage src={dorner_logo} />
+              <LogoImage
+                src={dorner_logo}
+                alt="Logo for Dorner Canine Training"
+              />
             </Logo>
             <Navigation pathName={pathName} />
           </SiteHeader>
