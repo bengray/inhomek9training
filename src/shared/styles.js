@@ -2,7 +2,6 @@ import styled from "styled-components"
 
 export const Container = styled.div`
   margin: 0 25px;
-  display: flex;
 
   @media screen and (min-width: 768px) {
     margin: 0 auto;

@@ -2,13 +2,37 @@ import React from "react"
 import Layout from "../components/layout"
 import { Container } from "../shared/styles"
 import styled from "styled-components"
+import { Link } from "gatsby"
 import dorner_logo_large from "../images/dorner_logo_large.png"
+import dorner_k9_training from "../images/dorner_k9_training.jpg"
+import services_dog from "../images/services_dog.png"
 import homeBanner from "../images/homeBanner.jpg"
 
 const HomeBanner = styled.img`
   z-index: 1;
   width: 100%;
   position: relative;
+  margin-bottom: 25px;
+  height: 200px;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(95, 95, 95, 0.52),
+      rgba(255, 255, 255, 0.73)
+    ),
+    url(${props => props.image});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-blend-mode: multiply;
+  @media screen and (min-width: 768px) {
+    height: 275px;
+  }
+  @media screen and (min-width: 992px) {
+    height: 350px;
+  }
+  @media screen and (min-width: 1200px) {
+    height: 450px;
+  }
 `
 
 const LargeLogo = styled.img`
@@ -27,15 +51,13 @@ const TagLine = styled.div`
   position: absolute;
   text-shadow: rgb(0, 0, 0) 1px 1px 5px;
   color: white;
-  line-height: 38px;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 18px;
   margin: 90px 0 0 20px;
-  line-height: 1.25rem;
+  line-height: 1.5em;
 
   @media screen and (min-width: 480px) {
     margin: 130px 0 0 20px;
-    line-height: 1.25rem;
   }
   @media screen and (min-width: 768px) {
     font-size: 25px;
@@ -54,6 +76,161 @@ const TagLine = styled.div`
   }
 `
 
+const Head1 = styled.h1`
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1em;
+  @media screen and (min-width: 768px) {
+    font-size: 55px;
+  }
+  @media screen and (min-width: 992px) {
+    font-size: 62px;
+  }
+`
+
+const Head2 = styled.h2`
+  font-size: 36px;
+  line-height: 1em;
+`
+
+const Head3 = styled.h3`
+  font-size: 24px;
+  line-height: 1em;
+`
+
+const Lead = styled.div`
+  font-size: 16px;
+  line-height: 1em;
+  margin: 15px 0 15px;
+  @media screen and (min-width: 768px) {
+    font-size: 21px;
+  }
+`
+
+const Paragraph = styled.p`
+  margin: 5px 0;
+  @media screen and (min-width: 768px) {
+    width: 75%;
+  }
+`
+
+const GreenDoggo = styled.div`
+  margin-top: 25px;
+  width: 100%;
+  height: 300px;
+  background-image: url(${dorner_k9_training});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media screen and (min-width: 768px) {
+    height: 300px;
+  }
+`
+
+const SignUpText = styled.div`
+  color: white;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1em;
+  text-align: center;
+`
+
+const ServicesBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+`
+
+const Service = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
+`
+
+const ServicesList = styled.ul`
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 25px;
+`
+
+const ServiceDoggo = styled.img`
+  width: 0;
+  height: 0;
+  display: none;
+  @media screen and (min-width: 1200px) {
+    display: block;
+    width: 500px;
+    height: auto;
+    margin-right: 20px;
+  }
+`
+
+const RequestEvaluationWrapper = styled.div`
+  background-color: #83b541;
+  color: white;
+`
+
+const RequestEvaluation = styled.div`
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+`
+
+const Text = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  > span {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 18px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
+`
+
+const RequestButton = styled.div`
+  display: flex;
+  justify-content: center;
+  border: 1px solid white;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  text-align: center;
+  > a {
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    width: 100%;
+    transition: background-color 0.4s;
+    &:hover {
+      background-color: white;
+      color: #57792a;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
+`
+
 export default function Home({ location }) {
   return (
     <Layout pathName={location.pathname}>
@@ -64,49 +241,75 @@ export default function Home({ location }) {
           Customized Training Services
         </TagLine>
       </Container>
-      <HomeBanner src={homeBanner} />
+      <HomeBanner image={homeBanner} />
       <Container>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam malesuada
-        aliquet velit, ut maximus enim condimentum dignissim. Nulla sagittis
-        laoreet ante id blandit. Fusce venenatis, nunc ac lacinia molestie,
-        sapien risus lacinia magna, ac fermentum nunc sem et purus. Vivamus a
-        ornare nulla, a vehicula ante. Donec eu sagittis arcu. Nullam placerat
-        sed lacus at rutrum. Vestibulum sapien libero, malesuada a porta sed,
-        commodo in nulla. Vestibulum tempor euismod tincidunt. Nunc semper ipsum
-        ut viverra malesuada. Proin egestas ante arcu, eu fringilla eros
-        vulputate vel. Proin dapibus, nisi et eleifend vehicula, lorem enim
-        semper lorem, vitae bibendum risus augue nec diam. Etiam finibus, justo
-        eu tristique venenatis, risus turpis varius ligula, non tempor orci urna
-        nec diam. Duis porta maximus enim et elementum. Donec nec ante vel purus
-        condimentum tincidunt vitae nec justo. Integer purus lacus, lobortis ut
-        auctor eget, porttitor in lorem. Nulla facilisi. Aliquam imperdiet lacus
-        vitae orci blandit, sollicitudin efficitur nisl molestie. Donec
-        vestibulum justo nec venenatis sodales. Nam convallis consectetur
-        consectetur. Fusce egestas turpis ac justo condimentum volutpat. Aenean
-        tincidunt diam et mauris tristique posuere. Vivamus non laoreet lectus.
-        Donec sed leo sollicitudin, sollicitudin odio bibendum, mattis magna.
-        Pellentesque eu mauris quis ex viverra aliquet vel ut ligula. Phasellus
-        egestas justo et erat tincidunt, id varius nisi congue. Mauris varius
-        arcu metus, non tempus lorem mollis non. Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Etiam vitae diam vel quam imperdiet
-        condimentum. Sed sed nibh massa. Morbi posuere eros purus, nec ultricies
-        urna volutpat ut. In enim elit, porta ac dictum sollicitudin, euismod
-        fringilla turpis. Vestibulum non magna at ipsum sagittis tempor.
-        Suspendisse potenti. Sed posuere, diam pretium dapibus dignissim, ex
-        ante tempus tellus, et pulvinar purus mi et nisl. Curabitur in tortor
-        velit. Fusce ut malesuada odio. Etiam rhoncus lorem id tellus pretium,
-        id porttitor lectus bibendum. Sed mi augue, convallis et fermentum ac,
-        rhoncus eu erat. Nullam id tortor et enim aliquam vehicula. Duis lorem
-        tortor, ultrices eu ipsum congue, hendrerit egestas dui. Etiam nibh ex,
-        aliquet eu mi quis, tempus molestie nibh. Suspendisse risus elit,
-        iaculis sed nisl ac, auctor imperdiet mi. Integer congue dapibus justo,
-        in maximus felis cursus et. Curabitur ultricies risus vitae imperdiet
-        congue. Orci varius natoque penatibus et magnis dis parturient montes,
-        nascetur ridiculus mus. Aliquam ut rutrum nulla. Suspendisse enim elit,
-        dapibus non mi at, convallis dapibus magna. Ut augue neque, placerat id
-        hendrerit pellentesque, faucibus sed nulla. Integer tempus tellus vitae
-        vulputate ornare.
+        <Head2>Welcome to</Head2>
+        <Head1>Dorner Canine Training</Head1>
+        <Lead>In-Home Obedience Training & Customized Training Services</Lead>
+        <Paragraph>
+          Our commitment is to help all of out clients establish a loving and
+          healthy relationship with their dogs.
+        </Paragraph>
+        <Paragraph>
+          We do that by providing expert, customized training services for your
+          dog, in your home.
+        </Paragraph>
+        <Paragraph>
+          We do that by teaching our clients and their families to establish
+          easy-to-learn, consistent training techniques that become a way of
+          life for you and your dog.
+        </Paragraph>
       </Container>
+      <GreenDoggo>
+        <Container>
+          <SignUpText>
+            Sign up for 3 lessons in the evaluation and receive 10% of the total
+            cost of the lessons
+          </SignUpText>
+        </Container>
+      </GreenDoggo>
+      <Container>
+        <ServicesBlock>
+          <ServiceDoggo src={services_dog} />
+          <Service>
+            <Head3>Basic Services:</Head3>
+            <Paragraph>
+              <ServicesList>
+                <li>Behavioral Counseling</li>
+                <li>Puppy Training</li>
+                <li>Basic Obedience</li>
+                <li>Advanced Obedience</li>
+                <li>Off-Lead Work</li>
+              </ServicesList>
+            </Paragraph>
+          </Service>
+          <Service>
+            <Head3>Special Services:</Head3>
+            <Paragraph>
+              <ServicesList>
+                <li>Assistance Dog Training</li>
+                <li>Therapy Dog Training</li>
+                <li>Emotional Support Dog Training</li>
+                <li>Temperament Testing</li>
+                <li>Puppy Selection</li>
+                <li>Client Boarding</li>
+              </ServicesList>
+            </Paragraph>
+          </Service>
+        </ServicesBlock>
+      </Container>
+      <RequestEvaluationWrapper>
+        <Container>
+          <RequestEvaluation>
+            <Text>
+              REQUEST AN EVALUATION <span>With Dorner Canine Training</span>
+            </Text>
+            <RequestButton>
+              <Link to="/contact/">Let's Get Started</Link>
+            </RequestButton>
+          </RequestEvaluation>
+        </Container>
+      </RequestEvaluationWrapper>
     </Layout>
   )
 }

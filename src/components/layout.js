@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 `
 
 const SiteHeader = styled.header`
-  margin: 0.5rem 0 0;
+  padding: 0.5rem 0 0;
   width: 100%;
   height: 90px;
   display: flex;
@@ -28,7 +28,17 @@ const SiteHeader = styled.header`
 
 const Logo = styled(Link)``
 
-const Footer = styled.div``
+const Footer = styled.div`
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: right;
+  background-color: #709c38;
+  color: white;
+  font-size: 12px;
+`
 
 const HiddenH1 = styled.h1`
   font-size: 0;
@@ -50,6 +60,10 @@ const LogoImage = styled.img`
 const HeaderWrapper = styled.div`
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
   margin-bottom: 1.5rem;
+  top: 0;
+  position: sticky;
+  background-color: white;
+  z-index: 100;
 `
 
 export default function Layout({ children, pathName }) {
@@ -68,9 +82,11 @@ export default function Layout({ children, pathName }) {
         </Container>
       </HeaderWrapper>
       {children}
-      <Container>
-        <Footer>Copyright 2020</Footer>
-      </Container>
+      <Footer>
+        <Container>
+          &copy; {new Date().getFullYear()} Dorner Canine Training
+        </Container>
+      </Footer>
     </Wrapper>
   )
 }
