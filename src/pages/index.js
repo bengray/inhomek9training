@@ -22,7 +22,7 @@ const HomeBanner = styled.img`
     url(${props => props.image});
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center;
   background-blend-mode: multiply;
   @media screen and (min-width: 768px) {
     height: 275px;
@@ -168,8 +168,8 @@ const ServiceDoggo = styled.img`
   display: none;
   @media screen and (min-width: 1200px) {
     display: block;
-    width: 500px;
-    height: auto;
+    width: auto;
+    height: 300px;
     margin-right: 20px;
   }
 `

@@ -4,6 +4,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
 import styled from "styled-components"
 
+const MobileWrapper = styled.div`
+  display: block;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+`
+
 const BarsBox = styled.div`
   height: 50px;
   width: 50px;
@@ -96,7 +103,7 @@ export default function MobileNav() {
   }
 
   return (
-    <>
+    <MobileWrapper>
       <BarsBox onClick={handleOpen}>
         <FontAwesomeIcon icon={faBars} />
       </BarsBox>
@@ -113,6 +120,6 @@ export default function MobileNav() {
         </NavList>
       </Menu>
       <Overlay shouldShow={showMobileNav} onClick={handleClose} />
-    </>
+    </MobileWrapper>
   )
 }

@@ -1,11 +1,14 @@
 import React from "react"
 import { Link } from "gatsby"
-import { isMobile } from "react-device-detect"
 import styled from "styled-components"
 import MobileNav from "./mobile-nav"
 
 const NavList = styled.ul`
   list-style: none;
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
 `
 
 const NavItem = styled.li`
@@ -34,23 +37,23 @@ const ListLink = props => (
 )
 
 export default function Navigation({ pathName }) {
-  if (isMobile) {
-    return <MobileNav />
-  }
   return (
-    <NavList>
-      <ListLink isCurrent={pathName === "/"} to="/">
-        Home
-      </ListLink>
-      <ListLink isCurrent={pathName === "/testimonials/"} to="/testimonials/">
-        Testimonials
-      </ListLink>
-      <ListLink isCurrent={pathName === "/about/"} to="/about/">
-        About
-      </ListLink>
-      <ListLink isCurrent={pathName === "/contact/"} to="/contact/">
-        Contact
-      </ListLink>
-    </NavList>
+    <>
+      <MobileNav />
+      <NavList>
+        <ListLink isCurrent={pathName === "/"} to="/">
+          Home
+        </ListLink>
+        <ListLink isCurrent={pathName === "/testimonials/"} to="/testimonials/">
+          Testimonials
+        </ListLink>
+        <ListLink isCurrent={pathName === "/about/"} to="/about/">
+          About
+        </ListLink>
+        <ListLink isCurrent={pathName === "/contact/"} to="/contact/">
+          Contact
+        </ListLink>
+      </NavList>
+    </>
   )
 }
