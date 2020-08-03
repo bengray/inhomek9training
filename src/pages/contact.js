@@ -1,6 +1,7 @@
 import React from "react"
 import SEO from "../components/seo"
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faPhone } from "@fortawesome/free-solid-svg-icons"
 import Layout from "../components/layout"
 import { Container } from "../shared/styles"
 import dog4 from "../images/dog4.png"
@@ -130,7 +131,10 @@ export default function Contact({ location }) {
               <Paragraph>
                 In-Home Obedience Training & Customized Training Services Phone:
                 <br />
-                <a href="tel:8439007475">(843) 900-7475</a>
+                <a href="tel:8439007475">
+                  <FontAwesomeIcon icon={faPhone} />
+                  &nbsp;(843) 900-7475
+                </a>
               </Paragraph>
             </ContactInfo>
           </ContactBlock>
