@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import dog3 from "../images/dog3.png"
-import PageBanner from "../shared/page-banner"
+import PageBanner from "../components/page-banner"
 import { Container } from "../shared/styles"
 import trainer from "../images/trainer.jpg"
 

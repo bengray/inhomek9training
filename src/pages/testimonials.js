@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import styled from "styled-components"
 import dog2 from "../images/dog2.jpg"
 import stars from "../images/stars.png"
-import PageBanner from "../shared/page-banner"
+import PageBanner from "../components/page-banner"
 import { Container } from "../shared/styles"
 
 const Testimonial = styled.div`
