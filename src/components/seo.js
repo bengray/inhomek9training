@@ -8,6 +8,7 @@ export default function SEO({ page, description, href }) {
       <meta name="description" content={description} />
       <title>{`Dorner Canine Training | ${page}`}</title>
       <link rel="canonical" href={href} />
+      <html lang="en" />
     </Helmet>
   )
 }
