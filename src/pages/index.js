@@ -6,7 +6,7 @@ import { Link } from "gatsby"
 import dorner_logo_large from "../images/dorner_logo_large.png"
 import dorner_k9_training from "../images/dorner_k9_training.jpg"
 import services_dog from "../images/services_dog.png"
-import homeBanner from "../images/homeBanner.jpg"
+import homeBanner from "../images/homeBannerFlat.png"
 
 const HomeBanner = styled.img`
   z-index: 1;
