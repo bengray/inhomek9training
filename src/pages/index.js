@@ -24,7 +24,7 @@ const HomeBannerWrapper = styled.div`
   }
 `
 
-const HomeBanner = styled.img`
+const HomeBanner = styled.div`
   z-index: 1;
   width: 100%;
   position: relative;
@@ -38,6 +38,16 @@ const HomeBanner = styled.img`
   background-repeat: no-repeat;
   background-position: top;
   background-blend-mode: multiply;
+  height: 200px;
+  @media screen and (min-width: 768px) {
+    height: 275px;
+  }
+  @media screen and (min-width: 992px) {
+    height: 350px;
+  }
+  @media screen and (min-width: 1200px) {
+    height: 450px;
+  }
 `
 
 const LargeLogo = styled.img`
@@ -59,7 +69,7 @@ const TagLine = styled.div`
   color: white;
   font-weight: 700;
   font-size: 18px;
-  margin: 80px 0 0 20px;
+  margin: 130px 0 0 20px;
   line-height: 1.5em;
 
   @media screen and (min-width: 480px) {
@@ -257,10 +267,7 @@ export default function Home({ location }) {
           </TagLine>
         </Container>
         <HomeBannerWrapper>
-          <HomeBanner
-            src={homeBanner}
-            alt="Image of dog running in the mountains"
-          />
+          <HomeBanner image={homeBanner} />
         </HomeBannerWrapper>
 
         <Container>
