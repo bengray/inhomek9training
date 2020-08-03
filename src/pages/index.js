@@ -42,12 +42,13 @@ const HomeBanner = styled.img`
 
 const LargeLogo = styled.img`
   z-index: 2;
-  width: 30%;
+  width: 20%;
   margin-top: 20px;
+  margin-left: 20px;
   position: absolute;
   @media screen and (min-width: 768px) {
-    margin-top: 30px;
-    margin-left: 30px;
+    margin-top: 40px;
+    margin-left: 40px;
   }
 `
 
