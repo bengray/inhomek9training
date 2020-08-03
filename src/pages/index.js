@@ -9,22 +9,10 @@ import dorner_k9_training from "../images/dorner_k9_training.jpg"
 import services_dog from "../images/services_dog.png"
 import homeBanner from "../images/homeBannerFlat.png"
 
-const HomeBanner = styled.img`
-  z-index: 1;
-  width: 100%;
-  position: relative;
+const HomeBannerWrapper = styled.div`
+  overflow: hidden;
   margin-bottom: 25px;
-  height: 200px;
-  background-image: linear-gradient(
-      to bottom,
-      rgba(95, 95, 95, 0.52),
-      rgba(255, 255, 255, 0.73)
-    ),
-    url(${props => props.image});
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-blend-mode: multiply;
+
   @media screen and (min-width: 768px) {
     height: 275px;
   }
@@ -34,6 +22,22 @@ const HomeBanner = styled.img`
   @media screen and (min-width: 1200px) {
     height: 450px;
   }
+`
+
+const HomeBanner = styled.img`
+  z-index: 1;
+  width: 100%;
+  position: relative;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(95, 95, 95, 0.52),
+      rgba(255, 255, 255, 0.73)
+    ),
+    url(${props => props.image});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-blend-mode: multiply;
 `
 
 const LargeLogo = styled.img`
@@ -54,7 +58,7 @@ const TagLine = styled.div`
   color: white;
   font-weight: 700;
   font-size: 18px;
-  margin: 90px 0 0 20px;
+  margin: 80px 0 0 20px;
   line-height: 1.5em;
 
   @media screen and (min-width: 480px) {
@@ -251,10 +255,13 @@ export default function Home({ location }) {
             Customized Training Services
           </TagLine>
         </Container>
-        <HomeBanner
-          src={homeBanner}
-          alt="Image of dog running in the mountains"
-        />
+        <HomeBannerWrapper>
+          <HomeBanner
+            src={homeBanner}
+            alt="Image of dog running in the mountains"
+          />
+        </HomeBannerWrapper>
+
         <Container>
           <Head2>Welcome to</Head2>
           <Head1>Dorner Canine Training</Head1>
