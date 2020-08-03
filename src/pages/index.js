@@ -238,6 +238,7 @@ export default function Home({ location }) {
       <SEO
         page="Home"
         description="Dorner Canine Training.  Personal, Professional, Proven."
+        href={location.href}
       />
       <Layout pathName={location.pathname}>
         <Container>

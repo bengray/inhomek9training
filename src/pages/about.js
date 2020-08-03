@@ -45,7 +45,11 @@ const TrainerPhoto = styled.div`
 export default function About({ location }) {
   return (
     <>
-      <SEO page="About" description="About Dorner Canine Training" />
+      <SEO
+        page="About"
+        description="About Dorner Canine Training"
+        href={location.href}
+      />
       <Layout pathName={location.pathname}>
         <PageBanner image={dog3} text="About" />
         <Container>

@@ -54,6 +54,7 @@ export default function Testimonials({ location }) {
       <SEO
         page="Testimonials"
         description="Customer testimonials for Dorner Canine Training"
+        href={location.href}
       />
       <Layout pathName={location.pathname}>
         <PageBanner image={dog2} text="Testimonials" />

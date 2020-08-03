@@ -84,7 +84,11 @@ const Paragraph = styled.p`
 export default function Contact({ location }) {
   return (
     <>
-      <SEO page="Contact" description="Contact Dorner Canine Training" />
+      <SEO
+        page="Contact"
+        description="Contact Dorner Canine Training"
+        href={location.href}
+      />
       <Layout pathName={location.pathname}>
         <PageBanner image={dog4} text="Contact" />
         <Container>
