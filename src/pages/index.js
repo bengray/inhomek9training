@@ -275,7 +275,7 @@ export default function Home({ location }) {
           <Head1>Dorner Canine Training</Head1>
           <Lead>In-Home Obedience Training & Customized Training Services</Lead>
           <Paragraph>
-            Our commitment is to help all of out clients establish a loving and
+            Our commitment is to help all of our clients establish a loving and
             healthy relationship with their dogs.
           </Paragraph>
           <Paragraph>
