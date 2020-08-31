@@ -36,7 +36,7 @@ const HomeBanner = styled.div`
     url(${props => props.image});
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center center;
   background-blend-mode: multiply;
   height: 200px;
   @media screen and (min-width: 768px) {
