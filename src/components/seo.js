@@ -9,7 +9,7 @@ export default function SEO({ page, description, href }) {
       <title>{`Dorner Canine Training | ${page}`}</title>
       <link rel="canonical" href={href} />
       <html lang="en" />
-      <script src="https://www.google.com/recaptcha/api.js?render=reCAPTCHA_site_key"></script>
+      <script src="https://www.google.com/recaptcha/api.js"></script>
     </Helmet>
   )
 }

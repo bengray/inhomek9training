@@ -83,14 +83,6 @@ const Paragraph = styled.p`
 `
 
 export default function Contact({ location }) {
-  useEffect(() => {
-    grecaptcha.ready(function() {
-      grecaptcha.execute('6LfTm1YaAAAAAChSB_lhDHdJ3pMJtznSe1lkyJc_', {action: 'homepage'})
-      .then(function(token) {
-        document.getElementById('captchaResponse').value = token
-      })
-    })
-  })
 
   return (
     <>
@@ -133,8 +125,8 @@ export default function Contact({ location }) {
                 <LabelText>Tell Me About Your Needs</LabelText>
                 <Textarea type="text" name="message" className="message" />
               </Label>
+              {/* <div class="g-recaptcha" data-sitekey="6Lfpx1YaAAAAAJMn_sX1H1SyTZzWfbmk4e7qS39C"></div> */}
               <SubmitButton type="submit">Submit</SubmitButton>
-              <input type="hidden" id="captchaResponse" name="g-recaptcha-response" />
             </Form>
             <ContactInfo>
               <ContactTitle>Dorner Canine Training</ContactTitle>
