@@ -56,7 +56,7 @@ const SubmitButton = styled.button`
   border: none;
   background-color: #83b541;
   opacity: ${props => props.disabled ? .33 : 1};
-  cursor: ${props => props.disabled ? "not-allowed": "default"};
+  cursor: ${props => props.disabled ? "not-allowed": "pointer"};
   color: white;
   font-weight: 700;
   text-transform: uppercase;
