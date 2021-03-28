@@ -1,4 +1,5 @@
-import React, { useEffect } from "react"
+import React, { useState } from "react"
+import Recaptcha from 'react-recaptcha'
 import SEO from "../components/seo"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPhone } from "@fortawesome/free-solid-svg-icons"
@@ -54,6 +55,8 @@ const Textarea = styled.textarea`
 const SubmitButton = styled.button`
   border: none;
   background-color: #83b541;
+  opacity: ${props => props.disabled ? .33 : 1};
+  cursor: ${props => props.disabled ? "not-allowed": "default"};
   color: white;
   font-weight: 700;
   text-transform: uppercase;
@@ -61,6 +64,7 @@ const SubmitButton = styled.button`
   @media screen and (min-width: 768px) {
     width: 50%;
   }
+  margin-top: 10px;
 `
 
 const ContactInfo = styled.div`
@@ -83,6 +87,15 @@ const Paragraph = styled.p`
 `
 
 export default function Contact({ location }) {
+  const [isSubmitDisabled, setIsSubmitDisabled] = useState(true)
+
+  const verifyCallback = () => {
+    setIsSubmitDisabled(false)
+  }
+
+  const onLoadcallback = () => {
+    console.log('reCAPTCHA loaded successfully')
+  }
 
   return (
     <>
@@ -125,8 +138,13 @@ export default function Contact({ location }) {
                 <LabelText>Tell Me About Your Needs</LabelText>
                 <Textarea type="text" name="message" className="message" />
               </Label>
-              {/* <div class="g-recaptcha" data-sitekey="6Lfpx1YaAAAAAJMn_sX1H1SyTZzWfbmk4e7qS39C"></div> */}
-              <SubmitButton type="submit">Submit</SubmitButton>
+              <Recaptcha
+                sitekey="6Lfpx1YaAAAAAJMn_sX1H1SyTZzWfbmk4e7qS39C"
+                render="explicit"
+                verifyCallback={verifyCallback}
+                onloadCallback={onLoadcallback}
+              />
+              <SubmitButton disabled={isSubmitDisabled} type="submit">Submit</SubmitButton>
             </Form>
             <ContactInfo>
               <ContactTitle>Dorner Canine Training</ContactTitle>
