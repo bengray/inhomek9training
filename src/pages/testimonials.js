@@ -336,7 +336,7 @@ export default function Testimonials({ location }) {
               very professional. She answers all of our questions and directs
               the member of our family in the proper training. We have found
               working with her to be a wonderful experience and plan to continue
-              until we are comforable that we have learned all that we can
+              until we are comfortable that we have learned all that we can
               learn. Again, we recommend her to anyone who is serious about
               having a well-behaved dog.
             </Text>
