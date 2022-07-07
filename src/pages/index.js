@@ -291,7 +291,7 @@ export default function Home({ location }) {
         <GreenDoggo>
           <Container>
             <SignUpText>
-              Sign up for 3 lessons in the evaluation and receive 10% of the
+              Sign up for three lessons in the evaluation and receive 10% of the
               total cost of the lessons
             </SignUpText>
           </Container>
