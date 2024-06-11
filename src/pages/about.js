@@ -66,7 +66,7 @@ export default function About({ location }) {
 
           <Paragraph>
             I have been training for over 20 years, and was honored to have a
-            dog I trained last year (2015) in the Puppy Bowl!
+            dog I trained in the 2015 Puppy Bowl!
           </Paragraph>
 
           <Paragraph>
