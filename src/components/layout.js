@@ -59,7 +59,6 @@ const LogoImage = styled.img`
 
 const HeaderWrapper = styled.div`
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
-  margin-bottom: 1.5rem;
   top: 0;
   position: sticky;
   background-color: white;
